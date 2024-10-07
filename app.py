@@ -3,7 +3,7 @@ import flet as ft
 
 
 async def main(page: ft.Page) -> None:
-    page.title = "Mandarin Clicker"
+    page.title = "HSEcoin"
     page.theme_mode = ft.ThemeMode.DARK
     page.bgcolor = "#141221"
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
@@ -57,7 +57,7 @@ async def main(page: ft.Page) -> None:
     )
 
     image = ft.Image(
-        src="logo_hse_new.png",
+        src="coin.png",
         fit=ft.ImageFit.CONTAIN,
         animate_scale=ft.Animation(duration=600, curve=ft.AnimationCurve.EASE)
     )
@@ -85,5 +85,5 @@ async def main(page: ft.Page) -> None:
 
 if __name__ == "__main__":
     tap_position = (0, 0)
-    ft.app(target=main, view=None, port=8000)
-    #ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=8000)
+    #ft.app(target=main, view=None, port=8000)
+    ft.app(target=main, view=ft.AppView.WEB_BROWSER, port=8000)
