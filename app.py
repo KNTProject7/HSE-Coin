@@ -57,7 +57,7 @@ async def main(page: ft.Page) -> None:
     )
 
     image = ft.Image(
-        src="coin.png",
+        src="coin_new.png",
         fit=ft.ImageFit.CONTAIN,
         animate_scale=ft.Animation(duration=600, curve=ft.AnimationCurve.EASE)
     )
