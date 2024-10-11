@@ -1,8 +1,10 @@
+# импортируем библиотеки
 import asyncio
 import flet as ft
 
-
+# создаем главную функцию
 async def main(page: ft.Page) -> None:
+    # настраеваем вид страницы
     page.title = "HSEcoin"
     page.theme_mode = ft.ThemeMode.DARK
     page.bgcolor = "#141221"
@@ -10,7 +12,17 @@ async def main(page: ft.Page) -> None:
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
     page.fonts = {"FulboArgenta":  "fonts/ofont.ru_Fulbo Argenta.ttf"}
     page.theme = ft.Theme(font_family="FulboArgenta")
+    # бар с кнопками внизу страницы
+    page.navigation_bar = ft.NavigationBar(
+        destinations=[
+            ft.NavigationBarDestination(icon=ft.icons.EXPLORE, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.icons.COMMUTE, label="Commute"),
+            ft.NavigationBarDestination(icon=ft.icons.BOOKMARK_BORDER, selected_icon=ft.icons.BOOKMARK, label="Explore"),
+            ft.NavigationBarDestination(icon=ft.icons.MONEY, label="Balance"),
+        ]
+    )
 
+    # анимация тапа по монетке
     async def score_up(event: ft.ContainerTapEvent):
         score.data += 1
         score.value = str(score.data)
@@ -24,12 +36,13 @@ async def main(page: ft.Page) -> None:
         score_counter.top = tap_position[1]
         score_counter.bottom = 0
 
-        progress_bar.value += (1 / 100)
+        # заполнение прогресс бара
+        progress_bar.value += (1 / 50)
 
-        if score.data % 100 == 0:
+        if score.data % 50 == 0:
             page.snack_bar = ft.SnackBar(
                 content=ft.Text(
-                    value="+100 points",
+                    value="+50 points",
                     size=20,
                     color="#00a9ff",
                     text_align=ft.TextAlign.CENTER
@@ -46,6 +59,7 @@ async def main(page: ft.Page) -> None:
         score_counter.opacity = 0
 
         await page.update_async()
+
 
     def on_tap_down(event: ft.ContainerTapEvent):
         global tap_position
@@ -69,6 +83,7 @@ async def main(page: ft.Page) -> None:
         bgcolor="#003399"
     )
 
+
     await page.add_async(
         score,
         ft.Container(
@@ -83,6 +98,7 @@ async def main(page: ft.Page) -> None:
         )
     )
 
+# запуск программы
 if __name__ == "__main__":
     tap_position = (0, 0)
     #ft.app(target=main, view=None, port=8000)
