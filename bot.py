@@ -11,7 +11,7 @@ def webapp_builder() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()
     builder.button(
         text="Let's Click!", web_app=WebAppInfo(
-            url="https://d94e-95-26-157-174.ngrok-free.app"
+            url="https://1a97-95-26-154-86.ngrok-free.app"
         )
     )
 
