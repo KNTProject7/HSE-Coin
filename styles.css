@@ -71,7 +71,7 @@ h1, .counter, .button {
     background-color: #333;
     display: flex;
     justify-content: space-around;
-    padding: 10px 0;
+    padding: 34px 0;
     box-sizing: border-box; /* Включаем паддинги в ширину */
 }
 
