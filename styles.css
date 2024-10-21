@@ -4,6 +4,7 @@ body {
     color: white;
     text-align: center;
     margin-top: 50px;
+    margin-bottom: 70px; /* Оставляем место для нижнего бара */
 }
 
 .counter {
@@ -31,4 +32,25 @@ body {
     border: none;
     cursor: pointer;
     font-size: 18px;
+}
+
+/* Стиль для нижнего бара */
+.bottom-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    display: flex;
+    justify-content: space-around;
+    padding: 34px 0;
+}
+
+.icon {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.icon:hover {
+    color: #61dafb;
 }
