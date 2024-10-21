@@ -78,25 +78,6 @@
                 console.error('Ошибка сохранения:', error);
               });
         });
-
-         // Функция для сброса и перезапуска анимации на кнопке
-        function animateButton() {
-            // Удаляем класс с кнопки, если он есть, чтобы сбросить анимацию
-            clickButton.classList.remove('button-active');
-
-            // Принудительно перезапускаем анимацию
-            void clickButton.offsetWidth; // Трюк для сброса состояния кнопки
-
-            // Добавляем класс обратно для запуска анимации
-            clickButton.classList.add('button-active');
-        }
-
-        clickButton.addEventListener('click', function() {
-            score++;
-            scoreElement.textContent = score;
-
-            animateButton(); // Запускаем анимацию на кнопке при каждом клике
-        });
     </script>
 
     
