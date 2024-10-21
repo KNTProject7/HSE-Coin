@@ -54,25 +54,23 @@
               });
         });
 
-         // Функция для запуска анимации
-        function animateScore() {
-            scoreElement.classList.add('animate'); // Добавляем класс анимации
+         // Функция для сброса и перезапуска анимации на кнопке
+        function animateButton() {
+            // Удаляем класс с кнопки, если он есть, чтобы сбросить анимацию
+            clickButton.classList.remove('button-active');
 
-            // Убираем класс после завершения анимации
-            setTimeout(() => {
-                scoreElement.classList.remove('animate');
-                scoreElement.classList.add('animate-end'); // Возвращаем текст к нормальному состоянию
+            // Принудительно перезапускаем анимацию
+            void clickButton.offsetWidth; // Трюк для сброса состояния кнопки
 
-                setTimeout(() => {
-                    scoreElement.classList.remove('animate-end'); // Убираем класс после завершения анимации
-                }, 200); // Через 200 мс после анимации
-            }, 200); // Анимация длится 200 мс
+            // Добавляем класс обратно для запуска анимации
+            clickButton.classList.add('button-active');
         }
 
         clickButton.addEventListener('click', function() {
             score++;
             scoreElement.textContent = score;
-            animateScore(); // Запускаем анимацию при каждом клике
+
+            animateButton(); // Запускаем анимацию на кнопке при каждом клике
         });
     </script>
 
