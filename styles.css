@@ -1,13 +1,21 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #282c34;
-    color: white;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 70px; /* Оставляем место для нижнего бара */
-    padding: 0;
+    background-image: url('/Assets/Bckd_1.jpg'); /* Путь к вашему изображению */
+    background-size: cover; /* Изображение масштабируется, чтобы покрыть всю страницу */
+    background-position: center; /* Центрируем изображение */
+    background-repeat: no-repeat; /* Изображение не повторяется */
     margin: 0;
-    box-sizing: border-box; /* Чтобы все элементы вписывались в размеры */
+    padding: 0;
+    color: white; /* Цвет текста на фоне */
+    display: flex;
+    flex-direction: column; /* Размещаем элементы по вертикали */
+    justify-content: center; /* Центрируем элементы по вертикали */
+    align-items: center; /* Центрируем элементы по горизонтали */
+    height: 100vh; /* Высота 100% окна просмотра */
+}
+
+h1, .counter, .button {
+    text-align: center; /* Выравниваем текст по центру */
 }
 
 .counter {
@@ -24,10 +32,10 @@ body {
     background-position: center; /* Центрируем изображение */
     background-color: transparent; /* Убираем цвет фона кнопки */
     border: none; /* Убираем границы */
-    width: 150px; /* Ширина кнопки */
-    height: 150px; /* Высота кнопки */
+    width: 450px; /* Ширина кнопки */
+    height: 450px; /* Высота кнопки */
     cursor: pointer;
-    border-radius: 10px; /* Закругляем углы, если нужно */
+    border-radius: 10000000000000px; /* Закругляем углы, если нужно */
     color: transparent; /* Делаем текст невидимым */
     outline: none; /* Убираем синий контур при фокусе */
 }
