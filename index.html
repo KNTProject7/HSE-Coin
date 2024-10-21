@@ -13,8 +13,6 @@
     <div class="counter" id="score">0</div>
     <button class="button" id="clickButton">Кликни меня!</button>
 
-    <button class="save-btn" id="saveButton">Сохранить результат</button>
-
     <!-- Нижний бар с иконками -->
     <div class="bottom-bar">
         <a href="page1.html" class="icon"><i class="fas fa-home"></i></a>
@@ -24,33 +22,38 @@
     </div>
 
     <script>
-        let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+        const userId = 'user123'; // Задайте уникальный идентификатор для пользователя
+        let score = 0;
         const scoreElement = document.getElementById('score');
         const clickButton = document.getElementById('clickButton');
 
-        // Отображаем сохраненный счет при загрузке страницы
-        scoreElement.textContent = score;
+        // Загружаем текущий счет с сервера при загрузке страницы
+        function loadScore() {
+            fetch(`/get-score/${userId}`)
+                .then(response => response.json())
+                .then(data => {
+                    score = data.score;
+                    scoreElement.textContent = score;
+                })
+                .catch(error => console.error('Ошибка загрузки счета:', error));
+        }
+
+        loadScore(); // Загружаем счет при загрузке страницы
 
         clickButton.addEventListener('click', function() {
             score++;
             scoreElement.textContent = score;
 
-            // Автоматическое сохранение счета в localStorage
-            localStorage.setItem('score', score);
-            console.log('Счет сохранен: ' + score); // Лог сохраняемого счета
-        });
-
-        // Пример: сохранение данных через API
-        saveButton.addEventListener('click', function() {
+            // Автоматическое сохранение счета на сервере после каждого клика
             fetch('/save-score', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ score: score })
+                body: JSON.stringify({ userId: userId, score: score })
             }).then(response => response.json())
               .then(data => {
-                alert('Счет сохранен! Ваш счет: ' + data.score);
+                console.log('Счет сохранен: ' + data.score);
               })
               .catch((error) => {
                 console.error('Ошибка сохранения:', error);
