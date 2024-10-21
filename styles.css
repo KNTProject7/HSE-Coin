@@ -17,16 +17,19 @@ body {
 
 .button {
     padding: 20px;
-    background-color: #61dafb;
-    border: none;
-    font-size: 24px;
-    border-radius: 10px;
+    background-image: url('/Assets/HSe_COin.png'); /* Путь к вашему изображению */
+    background-size: cover; /* Масштабируем изображение по размеру кнопки */
+    background-repeat: no-repeat;
+    background-position: center; /* Центрируем изображение */
+    background-color: transparent; /* Убираем цвет фона кнопки */
+    border: none; /* Убираем границы */
+    width: 150px; /* Ширина кнопки */
+    height: 150px; /* Высота кнопки */
     cursor: pointer;
+    border-radius: 10px; /* Закругляем углы, если нужно */
+    color: transparent; /* Делаем текст невидимым */
 }
 
-.button:hover {
-    background-color: #21a1f1;
-}
 
 .save-btn {
     margin-top: 20px;
