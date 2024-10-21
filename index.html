@@ -22,44 +22,31 @@
     </div>
 
     <script>
-        const userId = 'user123'; // Задайте уникальный идентификатор для пользователя
         let score = 0;
         const scoreElement = document.getElementById('score');
         const clickButton = document.getElementById('clickButton');
-
-        // Загружаем текущий счет с сервера при загрузке страницы
-        function loadScore() {
-            fetch(`/get-score/${userId}`)
-                .then(response => response.json())
-                .then(data => {
-                    score = data.score;
-                    scoreElement.textContent = score;
-                })
-                .catch(error => console.error('Ошибка загрузки счета:', error));
-        }
-
-        loadScore(); // Загружаем счет при загрузке страницы
-
+    
         clickButton.addEventListener('click', function() {
             score++;
             scoreElement.textContent = score;
-
-            // Автоматическое сохранение счета на сервере после каждого клика
+    
+            // Автоматическое сохранение счета после каждого клика
             fetch('/save-score', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ userId: userId, score: score })
+                body: JSON.stringify({ score: score })
             }).then(response => response.json())
               .then(data => {
-                console.log('Счет сохранен: ' + data.score);
+                console.log('Счет сохранен: ' + data.score); // Лог сохраняемого счета
               })
               .catch((error) => {
-                console.error('Ошибка сохранения:', error);
+                console.error('Ошибка сохранения:', error); // Лог ошибки, если она произошла
               });
         });
     </script>
+    
 
 </body>
 </html>
