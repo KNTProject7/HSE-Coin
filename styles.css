@@ -23,6 +23,18 @@ body {
     min-height: 100vh; /* Минимальная высота 100% окна */
 }
 
+/* Анимация увеличения */
+.counter.animate {
+    transform: scale(1.5); /* Временно увеличиваем размер текста */
+    color: #ff7f50; /* Меняем цвет текста */
+}
+
+/* Плавный возврат к нормальному состоянию */
+.counter.animate-end {
+    transform: scale(1); /* Возвращаем обычный размер */
+    color: white; /* Возвращаем исходный цвет */
+}
+
 h1, .counter, .button {
     text-align: center; /* Выравниваем текст по центру */
 }
@@ -30,8 +42,8 @@ h1, .counter, .button {
 .counter {
     font-size: 48px;
     margin-bottom: 20px;
+    transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
 }
-
 .button {
     -webkit-tap-highlight-color: transparent; /* Отключаем синий эффект на устройствах с сенсорным экраном */
     padding: 20px;
@@ -47,11 +59,14 @@ h1, .counter, .button {
     border-radius: 10000000000000px; /* Закругляем углы, если нужно */
     color: transparent; /* Делаем текст невидимым */
     outline: none; /* Убираем синий контур при фокусе */
+    transition: transform 0.2s ease; /* Плавная анимация трансформации */
 }
 
-.button:hover, .button:focus {
-    outline: none; /* Убираем синий контур при наведении и фокусе */
+.button:active {
+    transform: scale(0.8); /* Уменьшаем кнопку при нажатии */
 }
+
+
 
 .save-btn {
     margin-top: 20px;

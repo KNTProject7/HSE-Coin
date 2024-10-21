@@ -9,7 +9,6 @@
 </head>
 <body>
 
-    <h1>Кликер</h1>
     <div class="counter" id="score">0</div>
     <button class="button" id="clickButton">Кликни меня!</button>
 
@@ -53,6 +52,27 @@
               .catch((error) => {
                 console.error('Ошибка сохранения:', error);
               });
+        });
+
+         // Функция для запуска анимации
+        function animateScore() {
+            scoreElement.classList.add('animate'); // Добавляем класс анимации
+
+            // Убираем класс после завершения анимации
+            setTimeout(() => {
+                scoreElement.classList.remove('animate');
+                scoreElement.classList.add('animate-end'); // Возвращаем текст к нормальному состоянию
+
+                setTimeout(() => {
+                    scoreElement.classList.remove('animate-end'); // Убираем класс после завершения анимации
+                }, 200); // Через 200 мс после анимации
+            }, 200); // Анимация длится 200 мс
+        }
+
+        clickButton.addEventListener('click', function() {
+            score++;
+            scoreElement.textContent = score;
+            animateScore(); // Запускаем анимацию при каждом клике
         });
     </script>
 
