@@ -11,7 +11,7 @@ def webapp_builder() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()
     builder.button(
         text="Let's Click!", web_app=WebAppInfo(
-            url="https://hse-coin.pages.dev/"
+            url="https://eb6cf3c9.hse-coin.pages.dev/"
         )
     )
 
