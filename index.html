@@ -10,6 +10,17 @@
             if (!isMobileDevice()) {
                 // Если не мобильное устройство, перенаправляем или выводим сообщение
                 document.body.innerHTML = "<h1>Это приложение доступно только на мобильных устройствах</h1>";
+
+                document.body.style.backgroundImage = "url(/Assets/BCK_11.png)"; /* Укажите путь к вашему фону */
+                document.body.style.backgroundSize = "cover"; /* Масштабируем фон */
+                document.body.style.backgroundPosition = "center"; /* Центрируем фон */
+                document.body.style.height = "100vh"; /* Задаем высоту на 100% экрана */
+                document.body.style.margin = "0";
+                document.body.style.display = "flex";
+                document.body.style.justifyContent = "center";
+                document.body.style.alignItems = "center";
+                document.body.style.color = "white"; /* Цвет текста */
+                document.body.style.fontFamily = "Arial, sans-serif";
             }
         };
     </script>
