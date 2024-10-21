@@ -28,8 +28,12 @@ body {
     cursor: pointer;
     border-radius: 10px; /* Закругляем углы, если нужно */
     color: transparent; /* Делаем текст невидимым */
+    outline: none; /* Убираем синий контур при фокусе */
 }
 
+.button:hover, .button:focus {
+    outline: none; /* Убираем синий контур при наведении и фокусе */
+}
 
 .save-btn {
     margin-top: 20px;
