@@ -1,0 +1,34 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #282c34;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.counter {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.button {
+    padding: 20px;
+    background-color: #61dafb;
+    border: none;
+    font-size: 24px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #21a1f1;
+}
+
+.save-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #61dafb;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}

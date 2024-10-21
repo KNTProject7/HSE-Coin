@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кликер</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <h1>Кликер</h1>
+    <div class="counter" id="score">0</div>
+    <button class="button" id="clickButton">Кликни меня!</button>
+
+    <button class="save-btn" id="saveButton">Сохранить результат</button>
+
+    <script>
+        let score = 0;
+        const scoreElement = document.getElementById('score');
+        const clickButton = document.getElementById('clickButton');
+        const saveButton = document.getElementById('saveButton');
+
+        clickButton.addEventListener('click', function() {
+            score++;
+            scoreElement.textContent = score;
+        });
+
+        // Пример: сохранение данных через API
+        saveButton.addEventListener('click', function() {
+            fetch('/save-score', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ score: score })
+            }).then(response => response.json())
+              .then(data => {
+                alert('Счет сохранен! Ваш счет: ' + data.score);
+              })
+              .catch((error) => {
+                console.error('Ошибка сохранения:', error);
+              });
+        });
+    </script>
+
+</body>
+</html>
