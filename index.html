@@ -22,15 +22,24 @@
     </div>
 
     <script>
-        let score = 0;
+        let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
         const scoreElement = document.getElementById('score');
         const clickButton = document.getElementById('clickButton');
-    
+
+        // Отображаем сохраненный счет при загрузке страницы
+        scoreElement.textContent = score;
+
         clickButton.addEventListener('click', function() {
             score++;
             scoreElement.textContent = score;
-    
-            // Автоматическое сохранение счета после каждого клика
+
+            // Автоматическое сохранение счета в localStorage
+            localStorage.setItem('score', score);
+            console.log('Счет сохранен: ' + score); // Лог сохраняемого счета
+        });
+
+        // Пример: сохранение данных через API
+        saveButton.addEventListener('click', function() {
             fetch('/save-score', {
                 method: 'POST',
                 headers: {
@@ -39,13 +48,14 @@
                 body: JSON.stringify({ score: score })
             }).then(response => response.json())
               .then(data => {
-                console.log('Счет сохранен: ' + data.score); // Лог сохраняемого счета
+                alert('Счет сохранен! Ваш счет: ' + data.score);
               })
               .catch((error) => {
-                console.error('Ошибка сохранения:', error); // Лог ошибки, если она произошла
+                console.error('Ошибка сохранения:', error);
               });
         });
     </script>
+
     
 
 </body>
