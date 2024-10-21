@@ -16,6 +16,7 @@ body {
 }
 
 .button {
+    -webkit-tap-highlight-color: transparent; /* Отключаем синий эффект на устройствах с сенсорным экраном */
     padding: 20px;
     background-image: url('/Assets/HSe_COin.png'); /* Путь к вашему изображению */
     background-size: cover; /* Масштабируем изображение по размеру кнопки */
