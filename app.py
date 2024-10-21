@@ -120,5 +120,5 @@ async def main(page: ft.Page) -> None:
 # запуск программы
 if __name__ == "__main__":
     tap_position = (0, 0)
-    ft.app(target=main, view=None, port=8000)
-    # ft.app(main) # для провеки того, что получилось
+    #ft.app(target=main, view=None, port=8000)
+    ft.app(main) # для провеки того, что получилось
