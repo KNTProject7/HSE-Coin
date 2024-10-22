@@ -67,6 +67,11 @@ h1, .counter, .button {
     transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
 }
 
+/* Анимация при нажатии с помощью фокуса ЕБУЧИЙ IOS*/
+.button:focus {
+    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
+    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
+}
 
 
 .save-btn {
