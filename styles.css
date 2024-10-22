@@ -50,21 +50,22 @@ h1, .counter, .button {
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
 }
 .button {
-    -webkit-tap-highlight-color: transparent; /* Отключаем синий эффект на устройствах с сенсорным экраном */
+    -webkit-tap-highlight-color: transparent; /* Убираем выделение на iOS */
     padding: 20px;
     background-image: url('/Assets/HSe_COin.png'); /* Путь к вашему изображению */
-    background-size: cover; /* Масштабируем изображение по размеру кнопки */
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center; /* Центрируем изображение */
-    background-color: transparent; /* Убираем цвет фона кнопки */
-    border: none; /* Убираем границы */
-    width: 450px; /* Ширина кнопки */
-    height: 450px; /* Высота кнопки */
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    width: 450px;
+    height: 450px;
     cursor: pointer;
     border-radius: 10000000000000px; /* Закругляем углы, если нужно */
-    color: transparent; /* Делаем текст невидимым */
-    outline: none; /* Убираем синий контур при фокусе */
+    color: transparent;
+    outline: none;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
+    touch-action: manipulation; /* Оптимизация для сенсорных устройств */
 }
 
 .button:active {

@@ -78,6 +78,18 @@
                 console.error('Ошибка сохранения:', error);
               });
         });
+        // Функция для перезапуска анимации кнопки
+        function animateButton() {
+            // Принудительно перезапускаем анимацию кнопки, убрав и добавив класс
+            clickButton.style.transform = 'scale(0.9)'; // Уменьшаем кнопку при нажатии
+            setTimeout(() => {
+                clickButton.style.transform = 'scale(1)'; // Возвращаем кнопку к нормальному размеру
+            }, 100); // Задержка в 100 мс
+        }
+
+        clickButton.addEventListener('click', function() {
+            animateButton(); // Запускаем анимацию на кнопке при каждом клике
+        });
     </script>
 
     
