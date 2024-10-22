@@ -46,22 +46,22 @@
     </div>
 
     <script>
-        let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
+            // Загружаем текущий счёт и значение клика из localStorage
+        let score = parseInt(localStorage.getItem('score')) || 0; // Используем значение из localStorage, либо 0 по умолчанию
+        let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Используем значение клика из localStorage, либо 1 по умолчанию
+
         const scoreElement = document.getElementById('score');
         const clickButton = document.getElementById('clickButton');
 
-        // Отображаем сохраненный счет при загрузке страницы
+        // Обновляем отображение счёта
         scoreElement.textContent = score;
 
+        // Обработчик кликов по кнопке
         clickButton.addEventListener('click', function() {
-            score++;
-            scoreElement.textContent = score;
-
-            // Автоматическое сохранение счета в localStorage
-            localStorage.setItem('score', score);
-            console.log('Счет сохранен: ' + score); // Лог сохраняемого счета
+            score += clickValue; // Увеличиваем счёт на значение клика
+            scoreElement.textContent = score; // Обновляем отображение счёта
+            localStorage.setItem('score', score); // Сохраняем обновлённый счёт в localStorage
         });
-
         // Пример: сохранение данных через API
         saveButton.addEventListener('click', function() {
             fetch('/save-score', {

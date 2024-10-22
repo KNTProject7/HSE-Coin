@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <title>Страница 2</title>
+    <title>Страница улучшения клика</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
 
-    <h1>Это вторая страница</h1>
+    <h1>Улучшение клика</h1>
+    <p id="scoreDisplay">Ваш счёт: <span id="score">0</span></p>
+
+    <!-- Кнопка для улучшения клика -->
+    <button class="button" id="upgradeClickButton">Улучшить клик (-500 очков)</button>
+
+    <!-- Кнопка для покупки максимального количества улучшений -->
+    <button class="button" id="upgradeMaxButton">Купить максимум улучшений</button>
 
     <!-- Нижний бар с иконками -->
     <div class="bottom-bar">
@@ -18,6 +25,52 @@
         <a href="page3.html" class="icon"><i class="fas fa-user"></i></a>
         <a href="page4.html" class="icon"><i class="fas fa-cog"></i></a>
     </div>
+
+    <script>
+        // Загружаем текущий баланс и значение клика из localStorage
+        let score = parseInt(localStorage.getItem('score')) || 1000; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Значение клика
+
+        const scoreElement = document.getElementById('score');
+        const upgradeClickButton = document.getElementById('upgradeClickButton');
+        const upgradeMaxButton = document.getElementById('upgradeMaxButton');
+
+        // Обновляем отображение счёта
+        scoreElement.textContent = score;
+
+        // Функция для улучшения клика (покупка 1 улучшения)
+        upgradeClickButton.addEventListener('click', function() {
+            if (score >= 500) {
+                score -= 500; // Отнимаем 500 очков за улучшение
+                clickValue += 1; // Увеличиваем значение клика на 1
+                scoreElement.textContent = score; // Обновляем отображение счёта
+
+                // Сохраняем новое значение клика и баланса в localStorage
+                localStorage.setItem('clickValue', clickValue);
+                localStorage.setItem('score', score); // Сохраняем обновлённый баланс
+                alert('Улучшение клика активировано! Теперь вы зарабатываете ' + clickValue + ' очков за клик.');
+            } else {
+                alert('Недостаточно очков для улучшения.');
+            }
+        });
+
+        // Функция для покупки максимального количества улучшений
+        upgradeMaxButton.addEventListener('click', function() {
+            if (score >= 500) {
+                let maxUpgrades = Math.floor(score / 500); // Вычисляем максимальное количество улучшений, которое можно купить
+                score -= maxUpgrades * 500; // Отнимаем стоимость всех улучшений
+                clickValue += maxUpgrades; // Увеличиваем значение клика на количество улучшений
+                scoreElement.textContent = score; // Обновляем отображение счёта
+
+                // Сохраняем новое значение клика и баланса в localStorage
+                localStorage.setItem('clickValue', clickValue);
+                localStorage.setItem('score', score); // Сохраняем обновлённый баланс
+                alert('Вы купили ' + maxUpgrades + ' улучшений! Теперь вы зарабатываете ' + clickValue + ' очков за клик.');
+            } else {
+                alert('Недостаточно очков для покупки улучшений.');
+            }
+        });
+    </script>
 
 </body>
 </html>
