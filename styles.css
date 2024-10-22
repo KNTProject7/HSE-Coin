@@ -74,8 +74,8 @@ h1, .counter, .button {
     background-size: cover;
     background-color: transparent;
     border: none;
-    width: 552px;
-    height: 135px;
+    width: 100%;
+    height: 30%;
     cursor: pointer;
     color: transparent;
     outline: none;
