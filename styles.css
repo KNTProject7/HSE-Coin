@@ -71,11 +71,12 @@ h1, .counter, .button {
 .button2 {
     -webkit-tap-highlight-color: transparent; /* Убираем выделение на iOS */
     background-image: url('/Assets/UPG_1.png'); /* Путь к вашему изображению */
-    background-size: cover;
+    background-size: 100% 100%;
     background-color: transparent;
     border: none;
     width: 100%;
-    height: 200px;
+    height: 15%;
+    object-fit: cover;
     cursor: pointer;
     color: transparent;
     outline: none;
