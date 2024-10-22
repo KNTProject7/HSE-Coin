@@ -4,6 +4,11 @@ html, body {
     height: 100%;
     overflow: hidden; /* Запрещаем прокрутку */
 }
+/* Отключение задержки для сенсорных экранов на iOS */
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Убираем подсветку при нажатии */
+    touch-action: manipulation; /* Оптимизация для сенсорных экранов */
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -67,11 +72,6 @@ h1, .counter, .button {
     transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
 }
 
-/* Анимация при нажатии с помощью фокуса ЕБУЧИЙ IOS*/
-.button:focus {
-    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
-    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
-}
 
 
 .save-btn {
