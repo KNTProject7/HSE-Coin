@@ -11,24 +11,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-
-    <h1><p id="scoreDisplay">Points <span id="score">0</span></p><h1>
+    <h1><p id="counter">Points <span id="score"></span></p><h1></h1>
     <h1>UPGRADES<h1>
     <!-- Кнопка для улучшения клика -->
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
-    <button class="button2" id="upgradeClickButton"></button>
+    <button class="button2" id="upgradeClickButton"><p id="priceDisplay"><span id="price1"></span> pts</p></button>
 
+    <button class="button3" id="upgradeClickButton1"><p id="priceDisplay2"><span id="price2"></span> pts</p></button>
     <!-- Нижний бар с иконками -->
     <div class="bottom-bar">
         <a href="index.html" class="icon"><i class="fas fa-home"></i></a> <!-- Возврат на главную -->
@@ -39,16 +27,25 @@
 
     <script>
         // Загружаем текущий баланс и значение клика из localStorage
-        let score = parseInt(localStorage.getItem('score')) || 1000; // Используйте значение из localStorage, либо 1000 по умолчанию
-        let price1 = parseInt(localStorage.getItem('price1')) || 1000; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let score = parseInt(localStorage.getItem('score')) || 0; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let price1 = parseInt(localStorage.getItem('price1')) || 500; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let price2 = parseInt(localStorage.getItem('price2')) || 15000; // Используйте значение из localStorage, либо 1000 по умолчанию
         let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Значение клика
+        
 
         const scoreElement = document.getElementById('score');
         const upgradeClickButton = document.getElementById('upgradeClickButton');
+        const upgradeClickButton1 = document.getElementById('upgradeClickButton1');
         const upgradeMaxButton = document.getElementById('upgradeMaxButton');
+        const price1Element = document.getElementById('price1')
+        const price2Element = document.getElementById('price2')
 
         // Обновляем отображение счёта
         scoreElement.textContent = score;
+        price1Element.textContent = price1;//Обновление переменной прайс при заходе
+        price2Element.textContent = price2;//Обновление переменной прайс при заходе
+
+
         
 
         // Функция для улучшения клика (покупка 1 улучшения)
@@ -57,12 +54,28 @@
                 score -= price1; // Отнимаем 500 очков за улучшение
                 clickValue += 1; // Увеличиваем значение клика на 1
                 scoreElement.textContent = score; // Обновляем отображение счёта
-                price1 = price1 * 1.2
+                price1 = Math.round(price1 * 1.2);
+                price1Element.textContent = price1; //Обновление переменной прайс 
 
                 // Сохраняем новое значение клика и баланса в localStorage
                 localStorage.setItem('clickValue', clickValue);
                 localStorage.setItem('score', score); // Сохраняем обновлённый баланс
                 localStorage.setItem('price1', price1); //Цена первого улучшения
+            }
+        });
+        // Функция для улучшения клика Номер 2(покупка 1 улучшения)
+        upgradeClickButton1.addEventListener('click', function() {
+            if (score >= price2) {
+                score -= price2; // Отнимаем 500 очков за улучшение
+                clickValue += 3; // Увеличиваем значение клика на 1
+                scoreElement.textContent = score; // Обновляем отображение счёта
+                price2 = Math.round(price2 * 1.5);
+                price2Element.textContent = price2; //Обновление переменной прайс 
+
+                // Сохраняем новое значение клика и баланса в localStorage
+                localStorage.setItem('clickValue', clickValue);
+                localStorage.setItem('score', score); // Сохраняем обновлённый баланс
+                localStorage.setItem('price1', price2); //Цена первого улучшения
             }
         });
 
