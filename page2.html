@@ -13,10 +13,10 @@
     <p id="scoreDisplay">Ваш счёт: <span id="score">0</span></p>
 
     <!-- Кнопка для улучшения клика -->
-    <button class="button" id="upgradeClickButton">Улучшить клик (-500 очков)</button>
+    <button class="button2" id="upgradeClickButton">Улучшить клик (-500 очков)</button>
 
     <!-- Кнопка для покупки максимального количества улучшений -->
-    <button class="button" id="upgradeMaxButton">Купить максимум улучшений</button>
+    <button class="button1" id="upgradeMaxButton">Купить максимум улучшений</button>
 
     <!-- Нижний бар с иконками -->
     <div class="bottom-bar">
@@ -48,9 +48,6 @@
                 // Сохраняем новое значение клика и баланса в localStorage
                 localStorage.setItem('clickValue', clickValue);
                 localStorage.setItem('score', score); // Сохраняем обновлённый баланс
-                alert('Улучшение клика активировано! Теперь вы зарабатываете ' + clickValue + ' очков за клик.');
-            } else {
-                alert('Недостаточно очков для улучшения.');
             }
         });
 
@@ -65,9 +62,6 @@
                 // Сохраняем новое значение клика и баланса в localStorage
                 localStorage.setItem('clickValue', clickValue);
                 localStorage.setItem('score', score); // Сохраняем обновлённый баланс
-                alert('Вы купили ' + maxUpgrades + ' улучшений! Теперь вы зарабатываете ' + clickValue + ' очков за клик.');
-            } else {
-                alert('Недостаточно очков для покупки улучшений.');
             }
         });
     </script>
