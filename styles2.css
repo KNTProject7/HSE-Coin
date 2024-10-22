@@ -1,8 +1,8 @@
 html, body {
     margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden; /* Запрещаем прокрутку */
+    padding-top: 27px;
+    height: 0;
+    overflow: scroll; /* Запрещаем прокрутку */
 }
 /* Отключение задержки для сенсорных экранов на iOS */
 html {
@@ -12,9 +12,9 @@ html {
 
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/Assets/Bckd_1.jpg'); /* Путь к вашему изображению */
+    background-image: url('/Assets/BCK_2.png'); /* Путь к вашему изображению */
     background-size: cover; /* Изображение масштабируется, чтобы покрыть всю страницу */
-    background-position: center; /* Центрируем изображение */
+    background-position: top; /* Центрируем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */
     background-attachment: fixed; /* Фон остается на месте при прокрутке */
     margin: 0;
@@ -24,8 +24,8 @@ body {
     flex-direction: column; /* Размещаем элементы по вертикали */
     justify-content: center; /* Центрируем элементы по вертикали */
     align-items: center; /* Центрируем элементы по горизонтали */
-    height: 100vh; /* Высота 100% окна просмотра */
-    min-height: 100vh; /* Минимальная высота 100% окна */
+    height: auto; /* Высота 100% окна просмотра */
+    min-height: auto; /* Минимальная высота 100% окна */
 }
 
 /* Анимация увеличения */
