@@ -30,7 +30,7 @@
         // Загружаем текущий баланс и значение клика из localStorage
         let score = parseInt(localStorage.getItem('score')) || 0; // Используйте значение из localStorage, либо 1000 по умолчанию
         let price1 = parseInt(localStorage.getItem('price1')) || 500; // Используйте значение из localStorage, либо 1000 по умолчанию
-        let price2 = parseInt(localStorage.getItem('price2')) || 15000; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let price2 = parseInt(localStorage.getItem('price2')) || 5000; // Используйте значение из localStorage, либо 1000 по умолчанию
         let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Значение клика
         
 
@@ -80,7 +80,7 @@
                 // Сохраняем новое значение клика и баланса в localStorage
                 localStorage.setItem('clickValue', clickValue);
                 localStorage.setItem('score', score); // Сохраняем обновлённый баланс
-                localStorage.setItem('price1', price2); //Цена первого улучшения
+                localStorage.setItem('price2', price2); //Цена первого улучшения
             }
         });
 
