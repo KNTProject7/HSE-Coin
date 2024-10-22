@@ -9,14 +9,10 @@
 </head>
 <body>
 
-    <h1>Улучшение клика</h1>
-    <p id="scoreDisplay">Ваш счёт: <span id="score">0</span></p>
+    <p id="scoreDisplay">Points <span id="score">0</span></p>
 
     <!-- Кнопка для улучшения клика -->
-    <button class="button2" id="upgradeClickButton">Улучшить клик (-500 очков)</button>
-
-    <!-- Кнопка для покупки максимального количества улучшений -->
-    <button class="button1" id="upgradeMaxButton">Купить максимум улучшений</button>
+    <button class="button2" id="upgradeClickButton">Улучшить клик ()</button>
 
     <!-- Нижний бар с иконками -->
     <div class="bottom-bar">
@@ -29,6 +25,7 @@
     <script>
         // Загружаем текущий баланс и значение клика из localStorage
         let score = parseInt(localStorage.getItem('score')) || 1000; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let price1 = parseInt(localStorage.getItem('price1')) || 1000; // Используйте значение из localStorage, либо 1000 по умолчанию
         let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Значение клика
 
         const scoreElement = document.getElementById('score');
@@ -37,33 +34,23 @@
 
         // Обновляем отображение счёта
         scoreElement.textContent = score;
+        
 
         // Функция для улучшения клика (покупка 1 улучшения)
         upgradeClickButton.addEventListener('click', function() {
-            if (score >= 500) {
-                score -= 500; // Отнимаем 500 очков за улучшение
+            if (score >= price1) {
+                score -= price1; // Отнимаем 500 очков за улучшение
                 clickValue += 1; // Увеличиваем значение клика на 1
                 scoreElement.textContent = score; // Обновляем отображение счёта
+                price1 = price1 * 1.2
 
                 // Сохраняем новое значение клика и баланса в localStorage
                 localStorage.setItem('clickValue', clickValue);
                 localStorage.setItem('score', score); // Сохраняем обновлённый баланс
+                localStorage.setItem('price1', price1); //Цена первого улучшения
             }
         });
 
-        // Функция для покупки максимального количества улучшений
-        upgradeMaxButton.addEventListener('click', function() {
-            if (score >= 500) {
-                let maxUpgrades = Math.floor(score / 500); // Вычисляем максимальное количество улучшений, которое можно купить
-                score -= maxUpgrades * 500; // Отнимаем стоимость всех улучшений
-                clickValue += maxUpgrades; // Увеличиваем значение клика на количество улучшений
-                scoreElement.textContent = score; // Обновляем отображение счёта
-
-                // Сохраняем новое значение клика и баланса в localStorage
-                localStorage.setItem('clickValue', clickValue);
-                localStorage.setItem('score', score); // Сохраняем обновлённый баланс
-            }
-        });
     </script>
 
 </body>

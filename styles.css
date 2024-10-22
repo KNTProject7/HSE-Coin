@@ -67,38 +67,16 @@ h1, .counter, .button {
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
 }
-.button1 {
-    -webkit-tap-highlight-color: transparent; /* Убираем выделение на iOS */
-    padding: 20px;
-    background-image: url('/Assets/UPG_1.png'); /* Путь к вашему изображению */
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-color: transparent;
-    border: none;
-    width: 100px;
-    height: 100px;
-    cursor: pointer;
-    border-radius: 0px; /* Закругляем углы, если нужно */
-    color: transparent;
-    outline: none;
-    transition: transform 0.2s ease; /* Плавная анимация трансформации */
-    touch-action: manipulation; /* Оптимизация для сенсорных устройств */
-}
 
 .button2 {
     -webkit-tap-highlight-color: transparent; /* Убираем выделение на iOS */
-    padding: 20px;
     background-image: url('/Assets/UPG_1.png'); /* Путь к вашему изображению */
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
     background-color: transparent;
     border: none;
-    width: 100px;
-    height: 100px;
+    width: 552px;
+    height: 135px;
     cursor: pointer;
-    border-radius: 0px; /* Закругляем углы, если нужно */
     color: transparent;
     outline: none;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
