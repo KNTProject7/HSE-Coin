@@ -12,6 +12,7 @@
 </head>
 <body>
     <h1><p id="counter">Points <span id="score"></span></p><h1></h1>
+    <h1><p id="counter">Click: <span id="clickValueEl"></span></p><h1></h1>
     <h1>UPGRADES<h1>
     <!-- Кнопка для улучшения клика -->
     <button class="button2" id="upgradeClickButton"><p id="priceDisplay"><span id="price1"></span> pts</p></button>
@@ -39,11 +40,13 @@
         const upgradeMaxButton = document.getElementById('upgradeMaxButton');
         const price1Element = document.getElementById('price1')
         const price2Element = document.getElementById('price2')
+        const clickValueEl = document.getElementById('clickValueEl')
 
         // Обновляем отображение счёта
         scoreElement.textContent = score;
         price1Element.textContent = price1;//Обновление переменной прайс при заходе
         price2Element.textContent = price2;//Обновление переменной прайс при заходе
+        clickValueEl.textContent = clickValue;
 
 
         
@@ -55,7 +58,8 @@
                 clickValue += 1; // Увеличиваем значение клика на 1
                 scoreElement.textContent = score; // Обновляем отображение счёта
                 price1 = Math.round(price1 * 1.2);
-                price1Element.textContent = price1; //Обновление переменной прайс 
+                price1Element.textContent = price1; //Обновление переменной прайс
+                clickValueEl.textContent = clickValue;
 
                 // Сохраняем новое значение клика и баланса в localStorage
                 localStorage.setItem('clickValue', clickValue);
@@ -70,7 +74,8 @@
                 clickValue += 3; // Увеличиваем значение клика на 1
                 scoreElement.textContent = score; // Обновляем отображение счёта
                 price2 = Math.round(price2 * 1.5);
-                price2Element.textContent = price2; //Обновление переменной прайс 
+                price2Element.textContent = price2; //Обновление переменной прайс
+                clickValueEl.textContent = clickValue;
 
                 // Сохраняем новое значение клика и баланса в localStorage
                 localStorage.setItem('clickValue', clickValue);

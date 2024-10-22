@@ -114,7 +114,7 @@ h1, .counter, .button {
     outline: none;
     /* padding: 250px; */
     /* margin: 10px; */
-    padding-top: 105px;
+    padding-top: 102px;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
 }
@@ -132,7 +132,7 @@ h1, .counter, .button {
     outline: none;
     /* padding: 250px; */
     /* margin: 10px; */
-    padding-top: 105px;
+    padding-top: 102px;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
 }
