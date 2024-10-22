@@ -81,7 +81,7 @@ h1, .counter, .button {
     color: transparent;
     outline: none;
     /* padding: 250px; */
-    padding-top: 105px;
+    padding-top: 100px;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
 }
