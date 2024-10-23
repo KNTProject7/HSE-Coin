@@ -45,7 +45,7 @@ h1, .counter, .button {
 .CPS {
     font-size: 40px;
     vertical-align: middle;
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 }
 .CPS_TExt {
     font-size: 50px;
@@ -58,7 +58,7 @@ h1, .counter, .button {
     font-size: 50px;
     margin: 20px;
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 
 }
 .button {
