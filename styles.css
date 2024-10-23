@@ -45,32 +45,32 @@ h1, .counter, .button {
 .CPS {
     font-size: 40px;
     position: absolute;
-    bottom: 84%;
-    left: 10%;
-    font-family: "Pixelify Sans", serif;
+    bottom: 83%;
+    left: 19%;
+    font-family: "Slackey", sans-serif;
 }
 .CPS_TExt {
     font-size: 50px;
     padding-right: 70%;
     padding-bottom: 110px;
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 }
 .counter {
     font-size: 50px;
     position: absolute;
     bottom: 500px;
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 
 }
 .counter1 {
     font-size: 50px;
     position: absolute;
-    bottom: 92%;
-    left: 1%;
+    bottom: 90%;
+    left: 6%;
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 
 }
 .button {

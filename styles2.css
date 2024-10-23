@@ -30,12 +30,12 @@ body {
 }
 #scoreDisplay {
     font-size: 40px;
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 
 }
 h1 {
     font-size: 40px;
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 }
 
 /* Анимация увеличения */
@@ -89,7 +89,7 @@ h1, .counter, .button {
     margin-top: 1px;
     right: 10px;
     font-size: 21px;
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 }
 #priceDisplay2 {
     font-size: 24px;
@@ -97,7 +97,7 @@ h1, .counter, .button {
     margin-top: 1px;
     right: 10px;
     font-size: 21px;
-    font-family: "Pixelify Sans", serif;
+    font-family: "Slackey", sans-serif;
 }
 
 .button2 {
