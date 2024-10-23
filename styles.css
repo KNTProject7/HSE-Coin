@@ -17,11 +17,12 @@ body {
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */
     background-attachment: fixed; /* Фон остается на месте при прокрутке */
+
     color: white; /* Цвет текста на фоне */
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     flex-direction: column; /* Размещаем элементы по вертикали */
+    justify-content: center; /* Центрируем элементы по вертикали */
+    align-items: center; /* Центрируем элементы по горизонтали */
     height: 100vh; /* Высота 100% окна просмотра */
     min-height: 100vh; /* Минимальная высота 100% окна */
 }
@@ -42,19 +43,9 @@ h1, .counter, .button {
     text-align: center; /* Выравниваем текст по центру */
 }
 .CPS {
-    font-size: 50px;
-    vertical-align: middle;
-    font-family: "Slackey", sans-serif;
-    position: absolute;
-    left: 48px;
-    bottom: 644px;
-}
-.CPS1 {
     font-size: 40px;
-    font-family: "Slackey", sans-serif;
-    left: 13px;
-    position: absolute;
-    bottom: 83%;
+    vertical-align: middle;
+    font-family: "Pixelify Sans", serif;
 }
 .CPS_TExt {
     font-size: 50px;
@@ -65,11 +56,9 @@ h1, .counter, .button {
 }
 .counter {
     font-size: 50px;
+    margin: 20px;
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
-    font-family: "Slackey", sans-serif;
-    position: absolute;
-    left: 160px;
-    bottom: 550px;
+    font-family: "Pixelify Sans", serif;
 
 }
 .button {
@@ -88,8 +77,7 @@ h1, .counter, .button {
     outline: none;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
-    position: absolute;
-    top: 234px;
+    margin: -35px;
 }
 
 .button2 {
@@ -111,16 +99,16 @@ h1, .counter, .button {
 }
 
 .button:active {
-    -webkit-transform: scale(0.9) ;
-    -webkit-transition: -webkit-transform 0.1s;
+    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
+    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
 }
 .button1:active {
-    -webkit-transform: scale(0.9) ;
-    -webkit-transition: -webkit-transform 0.1s;
+    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
+    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
 }
 .button2:active {
-    -webkit-transform: scale(0.9) ;
-    -webkit-transition: -webkit-transform 0.1s;
+    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
+    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
 }
 
 
@@ -156,13 +144,3 @@ h1, .counter, .button {
 .icon:hover {
     color: #61dafb;
 }
-.circle {
-    width: 260px; 
-    height: 200px;
-    background: #2b2c2c;
-    border-radius: 30%;
-    display: flex;
-    position: absolute;
-    left: -30px;
-    top: -36px
-    }
