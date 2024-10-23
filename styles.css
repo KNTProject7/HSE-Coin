@@ -17,9 +17,10 @@ body {
     background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */
     background-attachment: fixed; /* Фон остается на месте при прокрутке */
-
     color: white; /* Цвет текста на фоне */
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     flex-direction: column; /* Размещаем элементы по вертикали */
     height: 100vh; /* Высота 100% окна просмотра */
     min-height: 100vh; /* Минимальная высота 100% окна */
@@ -50,11 +51,10 @@ h1, .counter, .button {
 }
 .CPS1 {
     font-size: 40px;
-    vertical-align: middle;
     font-family: "Slackey", sans-serif;
-    position: absolute;
     left: 13px;
-    bottom: 670px;
+    position: absolute;
+    bottom: 83%;
 }
 .CPS_TExt {
     font-size: 50px;
@@ -111,16 +111,16 @@ h1, .counter, .button {
 }
 
 .button:active {
-    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
-    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
+    -webkit-transform: scale(0.9) ;
+    -webkit-transition: -webkit-transform 0.1s;
 }
 .button1:active {
-    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
-    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
+    -webkit-transform: scale(0.9) ;
+    -webkit-transition: -webkit-transform 0.1s;
 }
 .button2:active {
-    transform: scale(0.9); /* Уменьшаем кнопку при нажатии */
-    transition: transform 0.1s ease; /* Быстрая реакция на нажатие */
+    -webkit-transform: scale(0.9) ;
+    -webkit-transition: -webkit-transform 0.1s;
 }
 
 
@@ -157,12 +157,12 @@ h1, .counter, .button {
     color: #61dafb;
 }
 .circle {
-    width: 200px; 
-    height: 150px;
+    width: 260px; 
+    height: 200px;
     background: #2b2c2c;
     border-radius: 30%;
     display: flex;
     position: absolute;
     left: -30px;
-    top: -45px
+    top: -36px
     }
