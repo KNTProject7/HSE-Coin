@@ -152,17 +152,19 @@ h1, .counter, .button {
     font-size: 2.2vh;
     color: white;
     position: relative;
-    top: 5.6vh;
+    top: 4.6vh;
     left: -6vh;
     font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,0.95);
 }
 #priceDisplay2 {
     font-size: 2.2vh;
     color: white;
     position: relative;
-    top: 5.6vh;
+    top: 4.6vh;
     left: -6vh;
     font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,0.95);
 }
 
 .button2 {
@@ -176,7 +178,7 @@ h1, .counter, .button {
     cursor: pointer;
     color: transparent;
     width: 99vw;
-    height: 12.2vh;
+    height: 15.2vh;
     bottom: 47vh;
     outline: none;
     /* padding: 250px; */
@@ -185,10 +187,6 @@ h1, .counter, .button {
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
     justify-items: center;
     position: relative;
-    -webkit-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
-    box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
-    z-index: 100;
 }
 
 .button3 {
@@ -202,8 +200,8 @@ h1, .counter, .button {
     cursor: pointer;
     color: transparent;
     width: 99vw;
-    height: 12.2vh;
-    bottom: 41vh;
+    height: 15.2vh;
+    bottom: 45vh;
     outline: none;
     /* padding: 250px; */
     /* margin: 10px; */
@@ -211,10 +209,6 @@ h1, .counter, .button {
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
     justify-items: center;
     position: relative;
-    -webkit-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
-    -moz-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
-    box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
-    z-index: 100;
 }
 
 .button:active {
