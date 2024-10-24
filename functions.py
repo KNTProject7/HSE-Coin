@@ -36,3 +36,20 @@ rendered_template = template.render(score = score)
 # print(first_form_input)
 
 # user1 = 23455678
+
+
+def db_table_val(user_id: int):
+    cursor.execute('INSERT INTO test (user_id) VALUES (?)',
+                   (user_id, ))
+    conn.commit()
+
+
+def webapp_builder() -> InlineKeyboardBuilder:
+    builder = InlineKeyboardBuilder()
+    builder.button(
+        text="Let's Click!", web_app=WebAppInfo(
+            url="https://hse-coin.netlify.app/"
+        )
+    )
+
+    return builder.as_markup()
