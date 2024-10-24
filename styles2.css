@@ -100,8 +100,8 @@ h1, .counter, .button {
     box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
 }
 .CPS1 {
-    font-size: 7vh;
-    bottom: 15vh;
+    font-size: 8vh;
+    bottom: 14vh;
     align-items: center;
     position: relative;
     font-family: "Slackey", sans-serif;
@@ -109,13 +109,13 @@ h1, .counter, .button {
     
 }
 .CPS3 {
-    font-size: 7.2vh;
-    top: -39.8vh;
+    font-size: 4.2vh;
+    top: -36.8vh;
     align-items: center;
     position: relative;
     font-family: "Slackey", sans-serif;
-    z-index:100;
     text-shadow: 6px 11px 15px rgba(0,0,0,0.95);
+    z-index: 1;
 }
 .CPS31 {
     font-size: 4vh;
@@ -124,6 +124,8 @@ h1, .counter, .button {
     position: relative;
     font-family: "Slackey", sans-serif;
     z-index:100;
+    color: #444444;
+    background: #FFFFFF;
     
 }
 .CPS4 {
@@ -150,16 +152,16 @@ h1, .counter, .button {
     font-size: 2.2vh;
     color: white;
     position: relative;
-    top: 5.2vh;
-    left: -5vh;
+    top: 5.6vh;
+    left: -6vh;
     font-family: "Slackey", sans-serif;
 }
 #priceDisplay2 {
     font-size: 2.2vh;
     color: white;
     position: relative;
-    top: 5vh;
-    left: -5vh;
+    top: 5.6vh;
+    left: -6vh;
     font-family: "Slackey", sans-serif;
 }
 
@@ -173,8 +175,8 @@ h1, .counter, .button {
     border: none;
     cursor: pointer;
     color: transparent;
-    width: 89vw;
-    height: 11vh;
+    width: 99vw;
+    height: 12.2vh;
     bottom: 47vh;
     outline: none;
     /* padding: 250px; */
@@ -186,6 +188,7 @@ h1, .counter, .button {
     -webkit-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
     box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
+    z-index: 100;
 }
 
 .button3 {
@@ -198,8 +201,8 @@ h1, .counter, .button {
     border: none;
     cursor: pointer;
     color: transparent;
-    width: 89vw;
-    height: 11vh;
+    width: 99vw;
+    height: 12.2vh;
     bottom: 41vh;
     outline: none;
     /* padding: 250px; */
@@ -211,6 +214,7 @@ h1, .counter, .button {
     -webkit-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
     -moz-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
     box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
+    z-index: 100;
 }
 
 .button:active {
