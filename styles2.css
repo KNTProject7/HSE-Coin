@@ -14,18 +14,17 @@ body {
     font-family: Arial, sans-serif;
     background-image: url('/Assets/BCK_2.png'); /* Путь к вашему изображению */
     background-size: cover; /* Изображение масштабируется, чтобы покрыть всю страницу */
-    background-position: top; /* Центрируем изображение */
+    background-position: center; /* Центрируем изображение */
     background-repeat: no-repeat; /* Изображение не повторяется */
     background-attachment: fixed; /* Фон остается на месте при прокрутке */
-    margin: 0;
-    padding: 0;
+
     color: white; /* Цвет текста на фоне */
-    display: fixed;
+    display: flex;
     flex-direction: column; /* Размещаем элементы по вертикали */
     justify-content: center; /* Центрируем элементы по вертикали */
     align-items: center; /* Центрируем элементы по горизонтали */
-    height: auto; /* Высота 100% окна просмотра */
-    min-height: auto; /* Минимальная высота 100% окна */
+    height: 100vh; /* Высота 100% окна просмотра */
+    min-height: 100vh; /* Минимальная высота 100% окна */
 
 }
 #scoreDisplay {
@@ -83,58 +82,133 @@ h1, .counter, .button {
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
 }
-#priceDisplay {
-    font-size: 24px;
-    color: white;
-    margin-top: 1px;
-    right: 10px;
-    font-size: 21px;
+.CPS {
+    font-size: 8vh;
+    bottom: 27vh;
+    align-items: center;
+    position: relative;
     font-family: "Slackey", sans-serif;
 }
-#priceDisplay2 {
-    font-size: 24px;
-    color: white;
-    margin-top: 1px;
-    right: 10px;
-    font-size: 21px;
+.CPS2 {
+    font-size: 8vh;
+    bottom: 30vh;
+    align-items: center;
+    position: relative;
     font-family: "Slackey", sans-serif;
+    -webkit-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
+    -moz-box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
+    box-shadow: 1px 2px 39px 0px rgba(0, 0, 0, 1);
+}
+.CPS1 {
+    font-size: 8vh;
+    bottom: 14vh;
+    align-items: center;
+    position: relative;
+    font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,0.95);
+    
+}
+.CPS3 {
+    font-size: 4.2vh;
+    top: -36.8vh;
+    align-items: center;
+    position: relative;
+    font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,0.95);
+    z-index: 1;
+}
+.CPS31 {
+    font-size: 4vh;
+    top: -50.6vh;
+    align-items: center;
+    position: relative;
+    font-family: "Slackey", sans-serif;
+    z-index:100;
+    color: #444444;
+    background: #FFFFFF;
+    
+}
+.CPS4 {
+    font-size: 1.8vh;
+    top: 41.8vh;
+    right: 8vh;
+    align-items: center;
+    position: relative;
+    font-family: "Slackey", sans-serif;
+    z-index:100;
+    
+}
+.CPS41 {
+    font-size: 1.5vh;
+    top: 46.5vh;
+    left: -3.5vh;
+    align-items: center;
+    position: relative;
+    font-family: "Slackey", sans-serif;
+    z-index:100;
+    
+}
+#priceDisplay {
+    font-size: 2.2vh;
+    color: white;
+    position: relative;
+    top: 4.6vh;
+    left: -6vh;
+    font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,0.95);
+}
+#priceDisplay2 {
+    font-size: 2.2vh;
+    color: white;
+    position: relative;
+    top: 4.6vh;
+    left: -6vh;
+    font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,0.95);
 }
 
 .button2 {
     -webkit-tap-highlight-color: transparent; /* Убираем выделение на iOS */
     background-image: url('/Assets/UPG_1.png'); /* Путь к вашему изображению */
-    background-size: 100% auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: transparent;
     border: none;
-    width: 100%;
-    height: 15%;
-    object-fit: cover;
     cursor: pointer;
     color: transparent;
+    width: 99vw;
+    height: 15.2vh;
+    bottom: 47vh;
     outline: none;
     /* padding: 250px; */
     /* margin: 10px; */
-    padding-top: 100px;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
+    justify-items: center;
+    position: relative;
 }
+
 .button3 {
     -webkit-tap-highlight-color: transparent; /* Убираем выделение на iOS */
     background-image: url('/Assets/UPG_2.png'); /* Путь к вашему изображению */
-    background-size: 100% auto;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     background-color: transparent;
     border: none;
-    width: 100%;
-    height: 15%;
-    object-fit: cover;
     cursor: pointer;
     color: transparent;
+    width: 99vw;
+    height: 15.2vh;
+    bottom: 45vh;
     outline: none;
     /* padding: 250px; */
     /* margin: 10px; */
-    padding-top: 100px;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
+    justify-items: center;
+    position: relative;
 }
 
 .button:active {
