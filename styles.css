@@ -75,7 +75,7 @@ h1, .counter, .button {
 }
 .button {
     -webkit-tap-highlight-color: transparent; /* Убираем выделение на iOS */
-    background-image: url('/Assets/HSe_COin.png'); /* Путь к вашему изображению */
+    background-image: url('/Assets/HSe_COin\ \(1\).png'); /* Путь к вашему изображению */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
