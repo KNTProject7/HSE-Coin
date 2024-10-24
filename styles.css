@@ -43,11 +43,12 @@ h1, .counter, .button {
     text-align: center; /* Выравниваем текст по центру */
 }
 .CPS {
-    font-size: 40px;
+    font-size: 6vh;
     position: absolute;
-    bottom: 83%;
-    left: 19%;
+    bottom: 82.3vh;
+    left: 20vw;
     font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,1);
 }
 .CPS_TExt {
     font-size: 50px;
@@ -57,20 +58,22 @@ h1, .counter, .button {
     font-family: "Slackey", sans-serif;
 }
 .counter {
-    font-size: 50px;
+    font-size: 8vh;
     position: absolute;
-    bottom: 500px;
+    bottom: 62vh;
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
     font-family: "Slackey", sans-serif;
-
+    text-shadow: 6px 11px 15px rgba(0,0,0,1);
 }
 .counter1 {
-    font-size: 50px;
+    font-size: 12vw;
     position: absolute;
-    bottom: 90%;
+    bottom: 90vh;
     left: 6%;
     transition: transform 0.2s ease, color 0.2s ease; /* Плавная анимация изменения размера и цвета */
     font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,1);
+    
 
 }
 .button {
@@ -81,16 +84,16 @@ h1, .counter, .button {
     background-position: center;
     background-color: transparent;
     border: none;
-    width: 450px;
-    height: 450px;
+    width: 40vh;
+    height: 45vh;
     cursor: pointer;
-    border-radius: 10000000000000px; /* Закругляем углы, если нужно */
+    border-radius: 36vh; /* Закругляем углы, если нужно */
     color: transparent;
     outline: none;
     transition: transform 0.2s ease; /* Плавная анимация трансформации */
     touch-action: manipulation; /* Оптимизация для сенсорных устройств */
     position: absolute;
-    bottom: 70px;
+    bottom: 15vh;
 }
 
 .button2 {
