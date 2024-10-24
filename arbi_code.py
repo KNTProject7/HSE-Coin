@@ -37,3 +37,15 @@ async def start(message: Message) -> None:
         reply_markup=webapp_builder()
     )
 
+async def main() -> None:
+    bot = Bot("7535373221:AAHcgr-bHLbZVpmrLUV_L6mKnb6DadqJGqw", default=DefaultBotProperties(parse_mode=ParseMode.HTML))
+
+    dp = Dispatcher()
+    dp.include_router(router)
+
+    await bot.delete_webhook(True)
+    await dp.start_polling(bot)
+
+
+if name == "main":
+    asyncio.run(main())
