@@ -16,7 +16,6 @@ from webbrowser import *
 from jinja2 import Template
 
 router = Router()
-'''ВАНЯ В СТРОЧКУ СНИЗУ ВСТАТЬ ПРАВИЛЬНЫЙ ТОКЕН, ЕСЛИ Я НЕ ТО ВСТАВИЛ'''
 bot = telebot.TeleBot("7535373221:AAHcgr-bHLbZVpmrLUV_L6mKnb6DadqJGqw")
 
 conn = sqlite3.connect('c:/Users/eruha/Documents/FOr_University/HSE-Coin/BASED/BD1', check_same_thread=False)
