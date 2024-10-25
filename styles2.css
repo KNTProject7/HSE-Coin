@@ -101,7 +101,7 @@ h1, .counter, .button {
 }
 .CPS1 {
     font-size: 8vh;
-    bottom: 2vh;
+    bottom: -2vh;
     align-items: center;
     position: relative;
     font-family: "Slackey", sans-serif;
@@ -110,7 +110,7 @@ h1, .counter, .button {
 }
 .CPS3 {
     font-size: 4.2vh;
-    top: -25.8vh;
+    top: -22.8vh;
     align-items: center;
     position: relative;
     font-family: "Slackey", sans-serif;
