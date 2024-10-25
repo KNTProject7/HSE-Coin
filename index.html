@@ -54,11 +54,89 @@
     </div>
 
     <script>
+        // const fs = require('fs');
             // Загружаем текущий счёт и значение клика из localStorage
         let score = parseInt(localStorage.getItem('score')) || 0; // Используем значение из localStorage, либо 0 по умолчанию
         let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Используем значение клика из localStorage, либо 1 по умолчанию
         let price1 = parseInt(localStorage.getItem('price1')) || 500; // Используйте значение из localStorage, либо 1000 по умолчанию
         let price2 = parseInt(localStorage.getItem('price2')) || 5000; // Используйте значение из localStorage, либо 15000 по умолчанию
+
+        // let set = new Set();
+        // let a;
+
+        // let user = {
+        //     id: 1,
+        //     score: score,
+        //     clickValue: clickValue,
+        //     price1: price1,
+        //     price2: price2
+        // };
+
+        // // let json = ourfile.stringify(user);
+
+        // user_n = ourfile.parse(user);
+
+        // if (user_n.id[0] == 1) {
+        //     do {
+        //         a = Math.floor(Math.random() * (100000 + 1) + 68719476736);
+        //     } while (set.has(a));
+
+        //     set.add(a);
+        //     ch = set[-1];
+            
+        //     user_n = user_n.replace('"id": 1', '"id": 3');
+        // }
+
+        // user_n = ourfile.parse(user)
+
+
+        let set = new Set();
+        let a;
+
+        let ids = new Set([1]);
+
+        let users = {
+            ids: Array.from(ids),
+            pepl: [{
+                id: 1,
+                score: score,
+                clickValue: clickValue,
+                price1: price1,
+                price2: price2
+            }]
+        };
+
+        do {
+            a = Math.floor(Math.random() * (500 - 2 + 1)) + 2;
+        } while (set.has(a));
+
+        set.add(a);
+
+        ch = Array.from(set).pop();
+
+        let newPepl = {
+            id: ch,
+            score: score,
+            clickValue: clickValue,
+            price1: price1,
+            price2: price2
+        };
+
+        // ch = set[-1];
+        // console.log(set);
+        // newPepl.id = ch;
+
+        users.pepl.push(newPepl);
+        // let newPepl2 = {
+        //     id: 4,
+        //     score: score,
+        //     clickValue: clickValue,
+        //     price1: price1,
+        //     price2: price2
+        // };
+
+        JSON.stringify(users, null, 4);
+        
 
         const scoreElement = document.getElementById('score');
         const clickButton = document.getElementById('clickButton');
