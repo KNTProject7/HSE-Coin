@@ -64,7 +64,7 @@ cursor = conn.cursor()
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to("Click! Click! Click!",
+    bot.reply_to(message, "Click! Click! Click!",
         reply_markup=webapp_builder())
 
 # bot.polling(none_stop=True)
