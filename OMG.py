@@ -42,7 +42,6 @@ def db_table_val(user_id: int):
                    (user_id, ))
     conn.commit()
 
-
 def webapp_builder() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()
     builder.button(
@@ -63,6 +62,11 @@ bot = telebot.TeleBot("7535373221:AAHcgr-bHLbZVpmrLUV_L6mKnb6DadqJGqw")
 conn = sqlite3.connect('c:/Users/eruha/Documents/FOr_University/HSE-Coin/BASED/BD1', check_same_thread=False)
 cursor = conn.cursor()
 
+@bot.message_handler(commands=['start'])
+def start(message):
+    bot.reply_to("Click! Click! Click!",
+        reply_markup=webapp_builder())
+
 # bot.polling(none_stop=True)
 # @router.message(CommandStart())
 # async def start(message: Message) -> None:
@@ -74,10 +78,6 @@ cursor = conn.cursor()
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text.lower() == '/start':
-        message.reply(
-        "Click! Click! Click!",
-        reply_markup=webapp_builder()
-        )
         us_id = message.from_user.id
         info = cursor.execute('SELECT * FROM test WHERE user_id=?', (us_id, ))
         if info.fetchone() is None:
