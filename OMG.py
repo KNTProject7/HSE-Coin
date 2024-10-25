@@ -15,12 +15,12 @@ from lxml import html # импорт библиотеки HTML парсера
 from webbrowser import *
 from jinja2 import Template
 
-score = 0
+# score = 0
 
-with open('index.html') as file:
-    template = Template(file.read())
+# with open('index.html') as file:
+#     template = Template(file.read())
 
-rendered_template = template.render(score = score)
+# rendered_template = template.render(score = score)
 
 # with open('index.html', 'w', encoding='utf-8') as html_file:
 #     html_file.read()
@@ -62,17 +62,17 @@ bot = telebot.TeleBot("7535373221:AAHcgr-bHLbZVpmrLUV_L6mKnb6DadqJGqw")
 # conn = sqlite3.connect('c:/Users/eruha/Documents/FOr_University/HSE-Coin/BASED/BD1', check_same_thread=False)
 # cursor = conn.cursor()
 
-@bot.message_handler(commands=['start'])
-def start(message):
-    bot.reply_to(message, "Click! Click! Click!")
+# @bot.message_handler(commands=['start'])
+# def start(message):
+#     bot.reply_to(message, "Click! Click! Click!")
 
-# bot.polling(none_stop=True)
-# @router.message(CommandStart())
-# async def start(message: Message) -> None:
-#     await message.reply(
-#         "Click! Click! Click!",
-#         reply_markup=webapp_builder()
-#     )
+bot.polling(none_stop=True)
+@router.message(CommandStart())
+async def start(message: Message) -> None:
+    await message.reply(
+        "Click! Click! Click!",
+        reply_markup=webapp_builder()
+    )
 
 # @bot.message_handler(content_types=['text'])
 # def get_text_messages(message):
