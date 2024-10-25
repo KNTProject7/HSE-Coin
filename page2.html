@@ -25,6 +25,10 @@
     <button class="button4" id="upgradeClickButton2"><p id="priceDisplay3"><span id="price3"></span> pts</p></button>
 
     <button class="button5" id="upgradeClickButton3"><p id="priceDisplay4"><span id="price4"></span> pts</p></button>
+
+    <button class="button6" id="upgradeClickButton4"><p id="priceDisplay5"><span id="price5"></span> pts</p></button>
+
+    <button class="button7" id="upgradeClickButton5"><p id="priceDisplay6"><span id="price6"></span> pts</p></button>
     <!-- Нижний бар с иконками -->
     <div class="bottom-bar">
         <a href="index.html" class="icon"><i class="fas fa-home"></i></a> <!-- Возврат на главную -->
@@ -40,6 +44,8 @@
         let price2 = parseInt(localStorage.getItem('price2')) || 5000; // Используйте значение из localStorage, либо 1000 по умолчанию
         let price3 = parseInt(localStorage.getItem('price3')) || 12000; // Используйте значение из localStorage, либо 1000 по умолчанию
         let price4 = parseInt(localStorage.getItem('price4')) || 21337; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let price5= parseInt(localStorage.getItem('price5')) || 40000; // Используйте значение из localStorage, либо 1000 по умолчанию
+        let price6 = parseInt(localStorage.getItem('price6')) || 100000; // Используйте значение из localStorage, либо 1000 по умолчанию
         let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Значение клика
         
 
@@ -48,11 +54,15 @@
         const upgradeClickButton1 = document.getElementById('upgradeClickButton1');
         const upgradeClickButton2 = document.getElementById('upgradeClickButton2');
         const upgradeClickButton3 = document.getElementById('upgradeClickButton3');
+        const upgradeClickButton4 = document.getElementById('upgradeClickButton4');
+        const upgradeClickButton5 = document.getElementById('upgradeClickButton5');
         const upgradeMaxButton = document.getElementById('upgradeMaxButton');
         const price1Element = document.getElementById('price1')
         const price2Element = document.getElementById('price2')
         const price3Element = document.getElementById('price3')
         const price4Element = document.getElementById('price4')
+        const price5Element = document.getElementById('price5')
+        const price6Element = document.getElementById('price6')
         const clickValueEl = document.getElementById('clickValueEl')
 
         // Обновляем отображение счёта
@@ -61,6 +71,8 @@
         price2Element.textContent = price2;//Обновление переменной прайс при заходе
         price3Element.textContent = price3;//Обновление переменной прайс при заходе
         price4Element.textContent = price4;//Обновление переменной прайс при заходе
+        price5Element.textContent = price5;//Обновление переменной прайс при заходе
+        price6Element.textContent = price6;//Обновление переменной прайс при заходе
         clickValueEl.textContent = clickValue;
 
 
@@ -126,6 +138,36 @@
                 localStorage.setItem('clickValue', clickValue);
                 localStorage.setItem('score', score); // Сохраняем обновлённый баланс
                 localStorage.setItem('price4', price4); //Цена первого улучшения
+            }
+        });
+        upgradeClickButton4.addEventListener('click', function() {
+            if (score >= price5) {
+                score -= price5; // Отнимаем 500 очков за улучшение
+                clickValue += 28; // Увеличиваем значение клика на 1
+                scoreElement.textContent = score; // Обновляем отображение счёта
+                price5 = Math.round(price5 * 1.2);
+                price5Element.textContent = price5; //Обновление переменной прайс
+                clickValueEl.textContent = clickValue;
+
+                // Сохраняем новое значение клика и баланса в localStorage
+                localStorage.setItem('clickValue', clickValue);
+                localStorage.setItem('score', score); // Сохраняем обновлённый баланс
+                localStorage.setItem('price5', price5); //Цена первого улучшения
+            }
+        });
+        upgradeClickButton5.addEventListener('click', function() {
+            if (score >= price6) {
+                score -= price6; // Отнимаем 500 очков за улучшение
+                clickValue += 40; // Увеличиваем значение клика на 1
+                scoreElement.textContent = score; // Обновляем отображение счёта
+                price6 = Math.round(price6 * 1.2);
+                price6Element.textContent = price6; //Обновление переменной прайс
+                clickValueEl.textContent = clickValue;
+
+                // Сохраняем новое значение клика и баланса в localStorage
+                localStorage.setItem('clickValue', clickValue);
+                localStorage.setItem('score', score); // Сохраняем обновлённый баланс
+                localStorage.setItem('price6', price6); //Цена первого улучшения
             }
         });
 
