@@ -37,10 +37,10 @@ rendered_template = template.render(score = score)
 
 # user1 = 23455678
 
-def db_table_val(user_id: int):
-    cursor.execute('INSERT INTO test (user_id) VALUES (?)',
-                   (user_id, ))
-    conn.commit()
+# def db_table_val(user_id: int):
+#     cursor.execute('INSERT INTO test (user_id) VALUES (?)',
+#                    (user_id, ))
+#     conn.commit()
 
 def webapp_builder() -> InlineKeyboardBuilder:
     builder = InlineKeyboardBuilder()
@@ -59,13 +59,12 @@ router = Router()
 '''ВАНЯ В СТРОЧКУ СНИЗУ ВСТАТЬ ПРАВИЛЬНЫЙ ТОКЕН, ЕСЛИ Я НЕ ТО ВСТАВИЛ'''
 bot = telebot.TeleBot("7535373221:AAHcgr-bHLbZVpmrLUV_L6mKnb6DadqJGqw")
 
-conn = sqlite3.connect('c:/Users/eruha/Documents/FOr_University/HSE-Coin/BASED/BD1', check_same_thread=False)
-cursor = conn.cursor()
+# conn = sqlite3.connect('c:/Users/eruha/Documents/FOr_University/HSE-Coin/BASED/BD1', check_same_thread=False)
+# cursor = conn.cursor()
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to(message, "Click! Click! Click!",
-        reply_markup=webapp_builder())
+    bot.reply_to(message, "Click! Click! Click!")
 
 # bot.polling(none_stop=True)
 # @router.message(CommandStart())
@@ -75,13 +74,13 @@ def start(message):
 #         reply_markup=webapp_builder()
 #     )
 
-@bot.message_handler(content_types=['text'])
-def get_text_messages(message):
-    if message.text.lower() == '/start':
-        us_id = message.from_user.id
-        info = cursor.execute('SELECT * FROM test WHERE user_id=?', (us_id, ))
-        if info.fetchone() is None:
-            db_table_val(user_id=us_id)
+# @bot.message_handler(content_types=['text'])
+# def get_text_messages(message):
+#     if message.text.lower() == '/start':
+#         us_id = message.from_user.id
+#         info = cursor.execute('SELECT * FROM test WHERE user_id=?', (us_id, ))
+#         if info.fetchone() is None:
+#             db_table_val(user_id=us_id)
 
 
 
