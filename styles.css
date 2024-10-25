@@ -42,14 +42,17 @@ body {
 h1, .counter, .button {
     text-align: center; /* Выравниваем текст по центру */
 }
+
 .CPS {
     font-size: 6vh;
     position: absolute;
-    bottom: 82.3vh;
-    left: 20vw;
+    bottom: 89.8vh;
+    left:6vw;
     font-family: "Slackey", sans-serif;
+    color: #FFFFFF;
     text-shadow: 6px 11px 15px rgba(0,0,0,1);
 }
+
 .CPS_TExt {
     font-size: 50px;
     padding-right: 70%;
