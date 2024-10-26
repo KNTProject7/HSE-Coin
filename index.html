@@ -158,6 +158,8 @@
         clickValueEl.textContent = clickValue;
         levelElement.textContent = level;
 
+        updateProgressBar();
+        
         function updateProgressBar() {
             const progress = Math.min((score / currentGoal) * 100, 100); // Вычисляем процент заполнения
             progressBar.style.width = progress + '%';
@@ -213,6 +215,8 @@
         clickButton.addEventListener('click', function() {
             animateButton(); // Запускаем анимацию на кнопке при каждом клике
         });
+
+        updateProgressBar();
     </script>
 
     
