@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <script>
+    <!-- <script>
         function isMobileDevice() {
             return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
         }
@@ -23,7 +23,7 @@
                 document.body.style.fontFamily = "Arial, sans-serif";
             }
         };
-    </script>
+    </script> -->
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -39,8 +39,16 @@
 </head>
 <body>
     <div class="CPS" id="clickValueEl"></div>
-    <div class="IMG"></div>
     <div class="counter" id="score"></div>
+    <div class="CPS3">CLICK</div>
+    <!-- Прогресс-бар и уровень -->
+    <div class="circle1"></div>
+    <div class="circle2"></div>
+    <div class="level-display">LEVEL <span id="level">1</span></div>
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+    
     <!-- <div class="counter1">CLick</div> -->
     <button class="button" id="clickButton">Кликни меня!</button>
 
@@ -59,6 +67,8 @@
         let clickValue = parseInt(localStorage.getItem('clickValue')) || 1; // Используем значение клика из localStorage, либо 1 по умолчанию
         let price1 = parseInt(localStorage.getItem('price1')) || 500; // Используйте значение из localStorage, либо 1000 по умолчанию
         let price2 = parseInt(localStorage.getItem('price2')) || 5000; // Используйте значение из localStorage, либо 15000 по умолчанию
+        let level = parseInt(localStorage.getItem('level')) || 1;
+        let currentGoal = parseInt(localStorage.getItem('currentGoal')) || 100; // Цель на первом уровне — 100
 
         // let set = new Set();
         // let a;
@@ -140,15 +150,40 @@
         const scoreElement = document.getElementById('score');
         const clickButton = document.getElementById('clickButton');
         const clickValueEl = document.getElementById('clickValueEl')
+        const progressBar = document.getElementById('progressBar');
+        const levelElement = document.getElementById('level');
+        const currentGoalElement = document.getElementById('currentGoal');
         // Обновляем отображение счёта
         scoreElement.textContent = score;
         clickValueEl.textContent = clickValue;
+        levelElement.textContent = level;
+
+        function updateProgressBar() {
+            const progress = Math.min((score / currentGoal) * 100, 100); // Вычисляем процент заполнения
+            progressBar.style.width = progress + '%';
+        }
+
+        // Функция для повышения уровня и увеличения цели
+        function levelUp() {
+            if (score >= currentGoal) {
+                level += 1; // Увеличиваем уровень
+                currentGoal *= 10; // Увеличиваем следующую цель (например, 100 -> 1000 -> 10000)
+                levelElement.textContent = level; // Обновляем отображение уровня
+
+                // Сохраняем обновлённые значения в localStorage
+                localStorage.setItem('score', score);
+                localStorage.setItem('level', level);
+                localStorage.setItem('currentGoal', currentGoal);
+            }
+        }
 
         // Обработчик кликов по кнопке
         clickButton.addEventListener('click', function() {
             score += clickValue; // Увеличиваем счёт на значение клика
             scoreElement.textContent = score; // Обновляем отображение счёта
-            localStorage.setItem('score', score); // Сохраняем обновлённый счёт в localStorage
+            localStorage.setItem('score', score); // Сохраняем обновлённый счёт
+            updateProgressBar(); // Обновляем прогресс-бар
+            levelUp(); // Проверяем, нужно ли повысить уровень
         });
         // Пример: сохранение данных через API
         saveButton.addEventListener('click', function() {

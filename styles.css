@@ -44,10 +44,17 @@ h1, .counter, .button {
 }
 
 .CPS {
-    font-size: 6vh;
+    font-size: 4vh;
     position: absolute;
-    bottom: 89.8vh;
-    left:6vw;
+    bottom: 76.8vh;
+    font-family: "Slackey", sans-serif;
+    color: #FFFFFF;
+    text-shadow: 6px 11px 15px rgba(0,0,0,1);
+}
+.CPS3 {
+    font-size: 3vh;
+    position: absolute;
+    bottom: 81.8vh;
     font-family: "Slackey", sans-serif;
     color: #FFFFFF;
     text-shadow: 6px 11px 15px rgba(0,0,0,1);
@@ -145,14 +152,21 @@ h1, .counter, .button {
 .bottom-bar {
     position: fixed;
     bottom: 0;
-    left: 0; /* Убедимся, что бар начинается с края экрана */
-    width: 100%; /* Задаем ширину 100% */
-    height: 9%;
-    background-color: #333;
+    left: 1.35vh;
+    border-radius: 4vh;
+    width: 94%; /* Задаем ширину 100% */
+    background-color: #302f2f;
+    min-height: 10%;
     display: flex;
     padding: 3vh;
+    max-height: 10%;
+    margin-top: 100vh;
     justify-content: space-around;
     box-sizing: border-box; /* Включаем паддинги в ширину */
+    -webkit-box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+
 }
 .icon {
     color: white;
@@ -162,4 +176,62 @@ h1, .counter, .button {
 
 .icon:hover {
     color: #61dafb;
+}
+/* Контейнер прогресс-бара */
+.progress-container {
+    width: 60%;
+    height: 2vh;
+    background-color: #ddd;
+    border-radius: 2vh;
+    overflow: hidden;
+    position: relative;
+    bottom: 59.7vh;
+}
+
+/* Полоска прогресса */
+.progress-bar {
+    height: 100%;
+    width: 1vh;
+    position: relative;
+
+    background-color: #4caf50;
+    transition: width 0.4s ease;
+}
+
+/* Отображение уровня */
+.level-display {
+    font-size: 3vh;
+    color: white;
+    position: relative;
+    bottom: 61vh;
+    font-family: "Slackey", sans-serif;
+    text-shadow: 6px 11px 15px rgba(0,0,0,1);
+}
+.circle1 {
+    width: 100%;
+    height: 17%;
+    border-radius: 20%;
+    position: relative;
+    bottom: 34vh;
+    
+    -webkit-box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    background: rgb(6,75,89);
+    background: radial-gradient(circle, rgba(6,75,89,1) 13%, rgba(11,27,73,1) 97%);
+    z-index: -1;
+    }
+.circle2 {
+    width: 40%;
+    height: 17%;
+    border-radius: 20%;
+    position: relative;
+    bottom: 40vh;
+    
+    -webkit-box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    -moz-box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    box-shadow: 4px 4px 48px 17px rgba(0, 0, 0, 0.33);
+    background: rgb(6,75,89);
+    background: radial-gradient(circle, rgba(6,75,89,1) 13%, rgba(11,27,73,1) 97%);
+    z-index: -2;
 }
